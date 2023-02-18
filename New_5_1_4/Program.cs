@@ -5,28 +5,40 @@
         static void Main(string[] args)
         {
             {
-                ShowColor();
-            }
-            static void ShowColor()
-            {
-                int i = 1;
-                while (true)
+                
+                var favcolor = new string[3];
+                for (int i = 0; i < favcolor.Length; i++)
                 {
                     Console.BackgroundColor = ConsoleColor.White;
                     Console.ForegroundColor = ConsoleColor.Black;
 
-                    Console.WriteLine("\nIteration {0}", i);
+                    Console.WriteLine("\nIteration {0}", i+1);
 
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.ForegroundColor = ConsoleColor.White;
 
                     Console.Write("Enter your color: ");
-                    string color = new(Console.ReadLine());
-                    if (color == "stop")
+                    favcolor[i] = ShowColor();
+                }
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("\nYour favorite colors:");
+                foreach (var color in favcolor)
+                {
+                    Console.WriteLine(color);
+                }
+                Console.ReadKey();
+            }
+            static string ShowColor()
+            {
+
+                string color = new(Console.ReadLine());
+                    /*if (color == "stop")
                     {
                         Console.WriteLine("The circle has been stopped");
                         break;
-                    }
+                    }*/
                     switch (color)
                     {
                         case "red":
@@ -83,12 +95,15 @@
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Sorry color {0} not found in database", color);
                             break;
+                            
 
-
+                    
+                    
+                    
+                        
                     }
-                    i++;
-                }
-                Console.ReadKey();
+                return color;
+                
             }
         }
     }
