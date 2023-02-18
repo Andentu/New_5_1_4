@@ -10,6 +10,10 @@
                 Console.WriteLine("Your favorite colors");
                 for (int i = 0; i < favcolor.Length; i++)
                 {
+                while (true)
+                {
+                while (true)
+                {
                     Console.BackgroundColor = ConsoleColor.White;
                     Console.ForegroundColor = ConsoleColor.Black;
 
